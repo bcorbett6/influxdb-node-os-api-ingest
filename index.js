@@ -34,7 +34,7 @@ exports.handler = async function(event) {
     Promise.all(fetchData)
       .then(
         fetchData = fetchData.flat(),
-        console.log(fetchData)
+        // console.log(fetchData)
       )
       .catch(err => console.log(err))
   } catch (status) {
