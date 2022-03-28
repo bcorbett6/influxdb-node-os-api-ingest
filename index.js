@@ -1,4 +1,4 @@
-const { formatISO, sub } = require('date-fns');
+const { getUnixTime, sub } = require('date-fns');
 const { InfluxDB, Point } = require("@influxdata/influxdb-client");
 const fetchRequest = require("./fetchRequestPromise");
 // require('dotenv').config()
@@ -13,8 +13,8 @@ let cities = process.env.PARAMETER_SET_1;
 let parameters = process.env.PARAMETER_SET_2;
 
 // FETCH Variables
-let dateTo = formatISO(Date.now());
-let dateFrom = formatISO(sub(Date.now(), { hours: fetchPeriodHours }));
+let dateTo = getUnixTime(Date.now());
+let dateFrom = getUnixTime(sub(Date.now(), { hours: fetchPeriodHours }));
 
 // Fetch data and write to InfluxDB every hour
 // async function airQuality() {

@@ -3,11 +3,11 @@ require('dotenv').config();
 let fetchUrl = process.env.FETCH_URL;
 
 // GET variables for testing
-// const { formatISO, sub } = require('date-fns');
-// const dateTo = formatISO(Date.now());
-// const dateFrom = formatISO(sub(Date.now(), { hours: 24 }));
-// const parameters = "";
-// const cities = "city=London";
+// const { getUnixTime, sub } = require('date-fns');
+// const dateTo = getUnixTime(Date.now());
+// const dateFrom = getUnixTime(sub(Date.now(), { hours: 100 }));
+// const parameters = "&parameter=pm10";
+// const cities = "&city=London";
 
 // Non Paginated Version of Request - ONLY ALLOW ONE FUNCTION TO BE EXPORTED
 async function fetchRequest(dateFrom, dateTo, parameters, cities) {
